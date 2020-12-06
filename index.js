@@ -98,7 +98,7 @@ function showTasks() {
 
 /* Testing the code */
 
-app() // init app
+/* app() // init app
 
 console.log("Create some tasks")
 createTask("Eat some meatballs")
@@ -112,3 +112,4 @@ console.log(`Tasks count ${db.get("tasksCount").value()}`)
 
 //console.log("Delete task 1")
 
+ */
