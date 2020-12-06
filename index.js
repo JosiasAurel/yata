@@ -70,3 +70,11 @@ function updateTask(id, newName) {
 
     return "Task Updated!"
 }
+
+function deleteTask(id) {
+    db.get("todos")
+        .find({ id: id })
+        .remove()
+
+    return "Task removed"
+}
