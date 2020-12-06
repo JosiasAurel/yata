@@ -61,3 +61,12 @@ function getTask(id) {
 
     return task
 }
+
+function updateTask(id, newName) {
+    db.get("todos")
+        .find({ id: id })
+        .assign({ name: newName })
+        .write()
+
+    return "Task Updated!"
+}
