@@ -53,3 +53,11 @@ function createTask(taskValue) {
 
     return
 }
+
+function getTask(id) {
+    let task = db.get("todos")
+        .find({ id: id })
+        .value()
+
+    return task
+}
