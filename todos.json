@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "name": "Eat some meatballs"
+    },
+    {
+      "id": 2,
+      "name": "Finish this app"
+    },
+    {
+      "id": 3,
+      "name": "You got some assignments dude"
+    },
+    {
+      "id": 4,
+      "name": "Eat some meatballs"
+    },
+    {
+      "id": 5,
+      "name": "Finish this app"
+    },
+    {
+      "id": 6,
+      "name": "You got some assignments dude"
+    }
+  ],
+  "tasksCount": 6
+}
