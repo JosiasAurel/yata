@@ -1,0 +1,17 @@
+{
+  "name": "yata",
+  "version": "1.0.0",
+  "description": "Yet Another Todo App",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "Todo",
+    "app",
+    "cli",
+    "lambda"
+  ],
+  "author": "Josias Aurel",
+  "license": "MIT"
+}
