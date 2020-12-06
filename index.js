@@ -41,6 +41,15 @@ function initApp() {
 }
 
 // utility functions to manage tasks
-function createTask(taskVakue) {
+function createTask(taskValue) {
+    let todoCount = db.get("tasksCount").value()
+    let task = {
+        id: todoCount+1,
+        name: taskValue
+    }
+    db.get("todos")
+        .push(task)
+        .write()
 
+    return
 }
