@@ -1,4 +1,7 @@
 
+// load utility functions
+const {showTasks, createTask, getTask, deleteTask} = require("./index")
+
 // here are the tests
 
 /* Testing the code */
