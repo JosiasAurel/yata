@@ -96,3 +96,4 @@ function showTasks() {
     return tasks
 }
 
+module.exports = { showTasks, createTask, deleteTask, updateTask, getTask, app }
