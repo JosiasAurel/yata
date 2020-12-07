@@ -43,14 +43,15 @@ function initApp() {
 function app() {
     db.defaults({
         todos: [],
-        tasksCount: 0
+        tasksCount: 0,
+        prevCount: 0
     }).write()
     return
 }
 
 // utility functions to manage tasks
 function createTask(taskValue) {
-    let todoCount = db.get("tasksCount").value()
+    let todoCount = db.get("prevCount").value()
     let task = {
         id: todoCount+1,
         name: taskValue
@@ -59,6 +60,7 @@ function createTask(taskValue) {
         .push(task) // add newly created tasks
         .write() // commit change
     db.update("tasksCount", c => c + 1).write()
+    db.update("prevCount", c => c + 1).write()
 
     return
 }
@@ -82,10 +84,8 @@ function updateTask(id, newName) {
 
 function deleteTask(id) {
 
-    db.get("todos") // get todos
-        .find({ id: id }) // find task with specified ID
-        .remove() // remove task
-    db.update("tasksCount", n => n - 1).write() // decrement the number of availabke tasks
+    db.get("todos").remove({ id: id }).write() // remove task
+    db.update("tasksCount", n => n - 1).write() // decrement the number of available tasks
 
     return "Task removed"
 }
@@ -98,7 +98,7 @@ function showTasks() {
 
 /* Testing the code */
 
-/* app() // init app
+ app() // init app
 
 console.log("Create some tasks")
 createTask("Eat some meatballs")
@@ -110,6 +110,16 @@ console.log(showTasks())
 
 console.log(`Tasks count ${db.get("tasksCount").value()}`)
 
+console.log("Delete task")
+deleteTask(1)
+console.log(showTasks())
+
+console.log(`Tasks count ${db.get("tasksCount").value()}`)
+
+deleteTask(2)
+console.log(showTasks())
+
+console.log(`Tasks count ${db.get("tasksCount").value()}`)
 //console.log("Delete task 1")
 
- */
+ 
